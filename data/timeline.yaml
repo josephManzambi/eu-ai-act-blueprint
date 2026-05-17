@@ -1,0 +1,185 @@
+# EU AI Act Enforcement Timeline
+# Single source of truth for all regulatory dates referenced in this project.
+# Update this file when the AI Act, the AI Omnibus, or implementing acts are amended.
+#
+# Schema:
+#   milestones: ordered list of regulatory milestones
+#     date:        ISO 8601 date (YYYY-MM-DD)
+#     title:       Short milestone name (used in tables and timeline)
+#     summary:     One-sentence description (used in dashboards, hover states)
+#     description: Longer explanation (used in long-form docs)
+#     status:      One of: in_force | upcoming | pending_adoption | consultation
+#     category:    foundation | prohibited | gpai | transparency | high_risk | governance | legacy
+#     articles:    AI Act article references that take effect
+#     source:      Authoritative source for the date
+#     notes:       Optional caveats (Omnibus changes, formal adoption pending, etc.)
+#
+# When the AI Omnibus is formally adopted (expected July 2026), update:
+#   - The status field of affected milestones from "pending_adoption" to "upcoming"
+#   - The notes field to reference the formal text
+#   - The "last_verified" date at the bottom of this file
+
+version: "0.1.3"
+last_verified: "2026-05-15"
+sources:
+  - "Regulation (EU) 2024/1689 (AI Act), OJ L 1689, 12 July 2024"
+  - "AI Omnibus political agreement, 7 May 2026 (formal adoption pending)"
+  - "Commission consultation on draft transparency guidelines, 8 May 2026"
+
+milestones:
+  - date: "2024-08-01"
+    title: "AI Act enters into force"
+    summary: "Regulation 2024/1689 takes legal effect 20 days after publication in the Official Journal."
+    description: "The AI Act enters into force across the European Union. Phased application begins, with most substantive obligations taking effect on later dates."
+    status: in_force
+    category: foundation
+    articles: ["Art. 113"]
+    source: "Regulation 2024/1689, Art. 113"
+
+  - date: "2025-02-02"
+    title: "Prohibited practices + AI literacy"
+    summary: "Art. 5 prohibitions and Art. 4 AI literacy obligations take effect."
+    description: |
+      The eight categories of prohibited AI practices under Art. 5 become enforceable: social scoring,
+      subliminal manipulation, exploitation of vulnerabilities, untargeted facial image scraping,
+      emotion inference in workplace/education, biometric categorization for sensitive attributes,
+      predictive policing based on profiling, and real-time remote biometric ID in public spaces
+      (with narrow exceptions). The Art. 4 obligation for Providers and Deployers to ensure AI
+      literacy among their staff also takes effect.
+    status: in_force
+    category: prohibited
+    articles: ["Art. 5", "Art. 4"]
+    source: "Regulation 2024/1689, Art. 113(a)"
+
+  - date: "2025-08-02"
+    title: "GPAI model obligations + governance"
+    summary: "Art. 51-56 GPAI provider obligations and AI Office governance structure operational."
+    description: |
+      General-Purpose AI (GPAI) model providers become subject to obligations on technical
+      documentation, copyright compliance, downstream provider information, and (for systemic-risk
+      models) safety frameworks and serious incident reporting. The AI Office, European AI Board,
+      Scientific Panel, and Advisory Forum become operational. Penalty regime activates for
+      breaches of these provisions.
+    status: in_force
+    category: gpai
+    articles: ["Art. 51", "Art. 52", "Art. 53", "Art. 54", "Art. 55", "Art. 56", "Art. 64", "Art. 65", "Art. 66", "Art. 67", "Art. 68", "Art. 69", "Art. 70"]
+    source: "Regulation 2024/1689, Art. 113(b)"
+
+  - date: "2026-08-02"
+    title: "Transparency obligations (Art. 50)"
+    summary: "Chatbot disclosure, emotion recognition notification, biometric categorization transparency."
+    description: |
+      Transparency obligations under Art. 50 take effect for all AI systems regardless of risk tier
+      (where applicable): users must be informed when interacting with AI, AI-generated content
+      must be marked in machine-readable format, deep fakes must be disclosed, and persons exposed
+      to emotion recognition or biometric categorization must be informed. GPAI enforcement powers
+      become fully active. Commission consultation on draft transparency guidelines opened 8 May 2026.
+    status: upcoming
+    category: transparency
+    articles: ["Art. 50"]
+    source: "Regulation 2024/1689, Art. 113"
+
+  - date: "2026-12-02"
+    title: "Watermarking grace period + nudifier ban"
+    summary: "Content labeling for existing systems (3-month grace) and new prohibition on non-consensual intimate imagery."
+    description: |
+      Two milestones land on this date as a result of the AI Omnibus. First, AI systems generating
+      synthetic content that were already on the market or in service before 2 August 2026 must
+      complete watermarking/content-labeling compliance (3-month grace period). Second, a new
+      prohibition added by the Omnibus takes effect: AI systems generating non-consensual intimate
+      imagery of real persons ("nudifiers") or child sexual abuse material (CSAM) are banned,
+      with safeguards required.
+    status: upcoming
+    category: transparency
+    articles: ["Art. 50(2)", "Art. 5 (Omnibus addition)"]
+    source: "AI Omnibus political agreement, 7 May 2026"
+    notes: "Pending formal adoption of the AI Omnibus by the European Parliament and Council (expected July 2026)."
+
+  - date: "2027-08-02"
+    title: "Regulatory sandboxes operational"
+    summary: "Deadline for Member States to establish at least one AI regulatory sandbox."
+    description: |
+      Each Member State must establish at least one AI regulatory sandbox at national level,
+      operational by this date. Sandboxes provide a controlled environment for testing innovative
+      AI systems with regulatory supervision before market placement.
+    status: upcoming
+    category: governance
+    articles: ["Art. 57"]
+    source: "Regulation 2024/1689, Art. 113"
+
+  - date: "2027-12-02"
+    title: "High-risk AI systems — Annex III"
+    summary: "Full Art. 8-15 requirements for standalone high-risk AI systems take effect."
+    description: |
+      The full set of high-risk AI requirements (Art. 8-15) becomes enforceable for standalone
+      high-risk AI systems listed in Annex III: biometrics, critical infrastructure, education,
+      employment, essential services, law enforcement, migration/border control, and administration
+      of justice. This includes the CV-screening use case demonstrated in this project (Annex III
+      area 4). Conformity assessment, EU declaration of conformity, CE marking, and EU database
+      registration become required before market placement.
+    status: pending_adoption
+    category: high_risk
+    articles: ["Art. 6(2)", "Art. 8", "Art. 9", "Art. 10", "Art. 11", "Art. 12", "Art. 13", "Art. 14", "Art. 15", "Art. 16", "Art. 17", "Art. 43", "Art. 47", "Art. 48", "Art. 49"]
+    source: "AI Omnibus political agreement, 7 May 2026 (postponed from 2 Aug 2026 — 16 months)"
+    notes: "Original deadline was 2 August 2026. Postponed by AI Omnibus by 16 months. Formal adoption pending — expected July 2026. AI systems placed on the EU market before this date are not retroactively subject to high-risk requirements unless they undergo substantial modification."
+
+  - date: "2028-08-02"
+    title: "High-risk AI in regulated products — Annex I"
+    summary: "AI systems as products or safety components under EU product safety legislation."
+    description: |
+      High-risk AI systems that are products, or safety components of products, covered by EU
+      harmonisation legislation listed in Annex I become subject to the AI Act. This covers AI
+      in medical devices, toys, lifts, marine equipment, motor vehicles, civil aviation, rail
+      systems, and radio equipment. AI subject to the Machinery Regulation (EU 2023/1230) is
+      carved out entirely from the AI Act's direct application under the Omnibus.
+    status: pending_adoption
+    category: high_risk
+    articles: ["Art. 6(1)", "Annex I"]
+    source: "AI Omnibus political agreement, 7 May 2026 (postponed from 2 Aug 2027 — 12 months)"
+    notes: |
+      Original deadline was 2 August 2027. Postponed by AI Omnibus by 12 months. The Omnibus also
+      narrows the "safety component" definition: AI components that merely assist users or optimise
+      performance without creating health or safety risks will not automatically be high-risk.
+      Formal adoption pending.
+
+  - date: "2030-12-31"
+    title: "Large-scale IT systems (Annex X)"
+    summary: "Legacy AI in EU large-scale IT systems must be brought into compliance."
+    description: |
+      AI systems that are components of large-scale EU IT systems established under the legal acts
+      listed in Annex X (e.g., Schengen Information System, Visa Information System, Eurodac,
+      Entry/Exit System, ETIAS) and that have been placed on the market or put into service before
+      2 August 2027 must be brought into compliance with the AI Act by this date.
+    status: upcoming
+    category: legacy
+    articles: ["Art. 111(1)", "Annex X"]
+    source: "Regulation 2024/1689, Art. 111(1)"
+
+# Quick-reference: countdown anchors for the live tracker page
+# (computed client-side from today's date — see /tracker page on the Astro site)
+countdown_anchors:
+  - milestone_date: "2026-08-02"
+    label: "Transparency obligations"
+  - milestone_date: "2026-12-02"
+    label: "Watermarking grace + nudifier ban"
+  - milestone_date: "2027-12-02"
+    label: "Annex III high-risk systems"
+    primary: true   # The headline countdown for the tracker hero
+  - milestone_date: "2028-08-02"
+    label: "Annex I product AI"
+
+# Penalty regime (referenced in multiple documents)
+penalties:
+  - tier: "Prohibited practices"
+    max_eur: 35000000
+    max_pct_turnover: 7.0
+    article: "Art. 99(3)"
+  - tier: "High-risk obligations (Art. 8-15, 16, 22-26, 28-49)"
+    max_eur: 15000000
+    max_pct_turnover: 3.0
+    article: "Art. 99(4)"
+  - tier: "Incorrect information to authorities"
+    max_eur: 7500000
+    max_pct_turnover: 1.0
+    article: "Art. 99(5)"
+sme_note: "For SMEs and startups, the LOWER of the two amounts applies (Art. 99(6))."

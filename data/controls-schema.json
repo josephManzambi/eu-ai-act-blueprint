@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EU AI Act Compliance Control",
+  "description": "Schema for controls in the eu-ai-act-blueprint controls catalog. Each control represents a technical or organizational measure mapped to EU AI Act requirements and cross-referenced with major AI security and governance frameworks.",
+  "type": "object",
+  "required": [
+    "control_id",
+    "control_name",
+    "description",
+    "ai_act_article",
+    "ai_act_obligation",
+    "actor_role",
+    "risk_category"
+  ],
+  "properties": {
+    "control_id": {
+      "type": "string",
+      "pattern": "^AISEC-[A-Z]{2}-\\d{3}$",
+      "description": "Unique identifier. Format: AISEC-{DOMAIN}-{SEQ}. Domains: RM (Risk Management), DG (Data Governance), TD (Technical Documentation), LG (Logging), TR (Transparency), HO (Human Oversight), AC (Accuracy), RB (Robustness), CS (Cybersecurity), PM (Post-Market Monitoring), CA (Conformity Assessment), DP (Deployer), GP (GPAI), PH (Prohibited), GV (Governance)."
+    },
+    "control_name": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Short, descriptive name for the control."
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description of the control objective, scope, and expected implementation."
+    },
+    "ai_act_article": {
+      "type": "string",
+      "description": "EU AI Act article(s) this control addresses. Format: 'Art. X(Y)' with semicolons between multiple articles."
+    },
+    "ai_act_obligation": {
+      "type": "string",
+      "enum": ["Mandatory", "Recommended", "Prohibited"],
+      "description": "Whether the control is legally mandatory under the AI Act, recommended as best practice, or addresses a prohibited practice."
+    },
+    "actor_role": {
+      "type": "string",
+      "description": "Which AI Act actor(s) this control applies to. Values: 'Provider', 'Deployer', 'Provider; Deployer'."
+    },
+    "risk_category": {
+      "type": "string",
+      "enum": ["Prohibited", "High-Risk", "Limited-Risk; High-Risk", "GPAI", "GPAI-Systemic", "All"],
+      "description": "AI Act risk tier(s) this control applies to."
+    },
+    "nist_ai_rmf": {
+      "type": "string",
+      "description": "NIST AI Risk Management Framework (AI 100-1) function and subcategory. Format: 'FUNCTION X.Y'. Functions: GOVERN, MAP, MEASURE, MANAGE."
+    },
+    "iso_42001": {
+      "type": "string",
+      "description": "ISO/IEC 42001:2023 clause(s) and Annex A controls. Format: 'X.Y.Z' for clauses, 'A.N' for Annex A controls."
+    },
+    "owasp_llm_top10": {
+      "type": "string",
+      "description": "OWASP Top 10 for LLM Applications (2025) risk(s) addressed. Format: 'LLMNN:Name'. Use '—' if not applicable."
+    },
+    "mitre_atlas": {
+      "type": "string",
+      "description": "MITRE ATLAS technique(s) mitigated. Format: 'AML.TNNNN'. Use '—' if not applicable."
+    },
+    "gdpr_article": {
+      "type": "string",
+      "description": "GDPR (Regulation 2016/679) article(s) where requirements overlap or reinforce. Use '—' if not applicable."
+    },
+    "dora_article": {
+      "type": "string",
+      "description": "DORA (Regulation 2022/2554) article(s) where requirements overlap or reinforce. Use '—' if not applicable."
+    },
+    "implementation_evidence": {
+      "type": "string",
+      "description": "Relative path to the code, configuration, or document in the project/ directory that implements this control."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["planned", "documented", "implemented", "tested"],
+      "description": "Implementation status of this control in the project. planned = roadmap commitment; documented = specification exists in docs/ or as code stub; implemented = working code exists; tested = automated tests pass."
+    },
+    "maturity_level": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3,
+      "description": "Implementation maturity for this control. 1 = Documented (specification exists in writing); 2 = Implemented (working code/process exists); 3 = Tested (automated tests verify the implementation). Collapsed from the original CMMI-style 5-level scale to match what this project can honestly demonstrate."
+    },
+    "phase": {
+      "type": "string",
+      "pattern": "^Phase [1-6]$",
+      "description": "Build phase when this control should be implemented. Phase 1=Foundation, 2=Data, 3=Documentation, 4=Core Engineering, 5=Compliance, 6=Polish."
+    }
+  }
+}
