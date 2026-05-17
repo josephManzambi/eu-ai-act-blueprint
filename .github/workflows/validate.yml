@@ -1,0 +1,87 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-controls:
+    name: Validate controls catalog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install jsonschema pyyaml
+
+      - name: Validate controls.csv against schema
+        run: |
+          python <<'EOF'
+          import csv
+          import json
+          from jsonschema import validate, ValidationError
+          with open('data/controls-schema.json') as f:
+              schema = json.load(f)
+          errors = []
+          with open('data/controls.csv') as f:
+              reader = csv.DictReader(f)
+              for row_num, row in enumerate(reader, start=2):
+                  # Convert maturity_level to int for schema validation
+                  if 'maturity_level' in row and row['maturity_level']:
+                      try:
+                          row['maturity_level'] = int(row['maturity_level'])
+                      except ValueError:
+                          errors.append(f"Row {row_num}: invalid maturity_level '{row['maturity_level']}'")
+                          continue
+                  try:
+                      validate(instance=row, schema=schema)
+                  except ValidationError as e:
+                      errors.append(f"Row {row_num} ({row.get('control_id', 'UNKNOWN')}): {e.message}")
+          if errors:
+              print(f"❌ {len(errors)} validation errors:")
+              for err in errors:
+                  print(f"  - {err}")
+              exit(1)
+          else:
+              print("✅ All rows valid against schema")
+          EOF
+
+      - name: Validate timeline.yaml is parseable
+        run: |
+          python -c "import yaml; yaml.safe_load(open('data/timeline.yaml'))"
+          echo "✅ timeline.yaml is valid YAML"
+
+      - name: Validate controls.csv structure
+        run: |
+          python <<'EOF'
+          import csv
+          with open('data/controls.csv') as f:
+              reader = csv.reader(f)
+              header = next(reader)
+              expected_columns = 17
+              if len(header) != expected_columns:
+                  print(f"❌ Header has {len(header)} columns, expected {expected_columns}")
+                  exit(1)
+              ids = []
+              for row_num, row in enumerate(reader, start=2):
+                  if len(row) != expected_columns:
+                      print(f"❌ Row {row_num} has {len(row)} columns, expected {expected_columns}")
+                      exit(1)
+                  ids.append(row[0])
+          # Check for duplicates
+          if len(ids) != len(set(ids)):
+              from collections import Counter
+              dupes = [k for k, v in Counter(ids).items() if v > 1]
+              print(f"❌ Duplicate control IDs: {dupes}")
+              exit(1)
+          print(f"✅ {len(ids)} controls, all with unique IDs")
+          EOF
