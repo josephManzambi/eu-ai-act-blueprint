@@ -4,6 +4,8 @@
 >
 > **Methodology:** Three complementary frameworks applied to the same system. **STRIDE** for the operational system flow. **MITRE ATLAS** for adversarial-ML attacks specific to the model. **LINDDUN** for privacy threats to candidates (the data subjects).
 >
+> **Framework selection:** No regulation mandates a threat-modeling methodology — neither the EU AI Act nor GDPR names one, and although GDPR Art. 35 requires a DPIA, it is method-agnostic. All three frameworks here are deliberate engineering choices, not compliance requirements. A dedicated privacy framework is needed *alongside* STRIDE because STRIDE collapses every privacy harm into the single "Information Disclosure" category — too coarse for a system processing candidate personal data under GDPR; ENISA's privacy-engineering guidance establishes that structured privacy threat assessment is expected practice, which is the rationale for adding a privacy method at all, independent of which one. Among the open options (LINDDUN, NIST Privacy Framework / IR 8062, CNIL PIA, ISO/IEC 29134), **LINDDUN** was chosen for the most systematic privacy-specific threat taxonomy — its seven categories are purpose-built for threat elicitation. It is an academic methodology from the DistriNet group at KU Leuven: well-regarded and peer-reviewed, but research-originated rather than a formal standard.
+>
 > **System under analysis:** The reference CV-screening system in `project/use_case/` — a candidate ranking API serving Provider (AcmeAI) and Deployer (NordBank) roles.
 
 ---
@@ -185,6 +187,8 @@ The LLM summarizer (C5) has a distinct threat surface from the ranking model (C4
 ## 4. LINDDUN — Privacy threats
 
 LINDDUN focuses on threats to data subjects (in this system: candidates). Most of these overlap with GDPR obligations, but framing them as threats clarifies *why* the GDPR controls exist and what they actually mitigate.
+
+LINDDUN has seven threat categories (the subsections below). Because a single category can surface more than one distinct threat in this system, the seven categories expand to eleven enumerated threat instances (P1–P11) — the count in the coverage matrix refers to instances, not categories.
 
 ### 4.1 Linkability
 
