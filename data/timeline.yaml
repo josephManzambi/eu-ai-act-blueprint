@@ -19,8 +19,8 @@
 #   - The notes field to reference the formal text
 #   - The "last_verified" date at the bottom of this file
 
-version: "0.1.3"
-last_verified: "2026-05-15"
+version: "0.1.4"
+last_verified: "2026-06-20"
 sources:
   - "Regulation (EU) 2024/1689 (AI Act), OJ L 1689, 12 July 2024"
   - "AI Omnibus political agreement, 7 May 2026 (formal adoption pending)"
