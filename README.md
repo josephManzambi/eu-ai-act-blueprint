@@ -19,11 +19,13 @@ The project covers both **Provider** obligations (the company building the AI) a
 
 ### Three deliverables, one coherent system
 
-| # | Deliverable | What it does | Where it lives |
-|---|-------------|-------------|----------------|
-| 1 | **Technical Overview** | Plain-language walkthrough of the EU AI Act from a security architect's perspective. Scope, risk classification, actor roles, requirements, timeline, penalties. | [Live tracker →](https://manzambi.com/tracker) + chapters in [`docs/01-overview/`](docs/01-overview/) |
-| 2 | **Compliance Demo** | A fully working CV-screening API with every Article 8–15 control implemented: risk management, data governance, bias detection, logging, human oversight, adversarial testing, post-market monitoring. Runs with `docker compose up`. | [`project/`](project/) |
-| 3 | **Controls Mapping** | 79 technical controls, each mapped to EU AI Act articles, NIST AI RMF, ISO/IEC 42001, OWASP LLM Top 10, MITRE ATLAS, GDPR, and DORA. Machine-readable CSV + searchable web table. | [`data/controls.csv`](data/controls.csv) |
+| # | Deliverable | What it does | Status |
+|---|-------------|-------------|--------|
+| 1 | **Controls Mapping** — [`data/controls.csv`](data/controls.csv) | 79 technical controls, each mapped to EU AI Act articles, NIST AI RMF, ISO/IEC 42001, OWASP LLM Top 10, MITRE ATLAS, GDPR, and DORA. Schema-validated, machine-readable. | ✅ **Available now** |
+| 2 | **Technical Overview** — [live tracker](https://manzambi.com/tracker) + [`docs/01-overview/`](docs/01-overview/) | Plain-language walkthrough of the EU AI Act from a security architect's perspective: scope, risk classification, actor roles, requirements, timeline, penalties. Plus a STRIDE + ATLAS + LINDDUN [threat model](docs/02-architecture/threat-model.md). | 🚧 **In progress** — 2 of 7 chapters + threat model published |
+| 3 | **Compliance Demo** — `project/` *(not yet in repo)* | A working CV-screening API implementing every Article 8–15 control: risk management, data governance, bias detection, logging, human oversight, adversarial testing, post-market monitoring. Runs with `docker compose up`. | 🔜 **Planned (Phase 2)** — [tracked in issues](https://github.com/josephManzambi/eu-ai-act-blueprint/issues) |
+
+> **What works today vs. what's planned:** the controls catalog, threat model, and overview chapters are usable now; the runnable demo is the next milestone. See **[STATUS.md](STATUS.md)** for the full picture.
 
 ---
 
@@ -54,21 +56,9 @@ grep "Deployer" data/controls.csv
 grep "LLM01:Prompt Injection" data/controls.csv
 ```
 
-### Run the compliance demo
+### Run the compliance demo *(planned — Phase 2)*
 
-```bash
-git clone https://github.com/josephManzambi/eu-ai-act-blueprint.git
-cd eu-ai-act-blueprint
-
-# Start the full stack (API + DB + monitoring + oversight console)
-docker compose up -d
-
-# Run the compliance test suite
-pytest project/tests/ -v --tb=short
-
-# Generate a compliance report
-python scripts/generate_compliance_report.py
-```
+The runnable CV-screening demo — the FastAPI service, the compliance test suite (`docker compose up`, `pytest`), and the report generator — is the **next milestone** and is not yet in the repository. Follow progress in **[STATUS.md](STATUS.md)** and the [issue tracker](https://github.com/josephManzambi/eu-ai-act-blueprint/issues). What you *can* run today is the catalog browsing above and the overview reading below.
 
 ### Read the technical overview
 
@@ -84,6 +74,8 @@ ls 01-overview/
 
 ## Project structure
 
+**In the repository today:**
+
 ```
 eu-ai-act-blueprint/
 ├── README.md
@@ -92,51 +84,27 @@ eu-ai-act-blueprint/
 ├── WHAT_THIS_IS_NOT.md                # ← Honest boundaries
 ├── LICENSING.md                       # ← License-per-directory map
 ├── LICENSE                            # Apache 2.0
-├── docs/                              # Documentation site source
-│   ├── 01-overview/                   # Deliverable 1: Technical overview
-│   │   ├── scope-and-jurisdiction.md  # Art. 2 — Extraterritorial reach
-│   │   ├── risk-pyramid.md            # Art. 5–6 — Risk classification
-│   │   ├── actor-roles.md             # Art. 3 — Provider / Deployer / Importer
-│   │   ├── high-risk-requirements.md  # Art. 8–15 — The 7 core requirements
-│   │   ├── gpai-obligations.md        # Art. 51–56 — GPAI models
-│   │   ├── timeline-and-penalties.md  # Phased enforcement dates + fines
-│   │   └── ai-omnibus-2026.md         # May 2026 simplification package
-│   ├── 02-architecture/               # Reference architecture
-│   │   ├── threat-model.md            # ← STRIDE + ATLAS + LINDDUN — the security justification
-│   │   ├── reference-architecture.md  # C4 diagrams of the compliance stack
-│   │   └── provider-vs-deployer.md    # Responsibility matrix
-│   ├── 03-controls/                   # Deliverable 3: Controls mapping
-│   │   ├── methodology.md             # ← How the catalog was derived
-│   │   ├── catalog.md                 # Auto-rendered from controls.csv
-│   │   └── mappings/                  # Per-framework deep dives
-│   │       ├── nist-ai-rmf.md
-│   │       ├── iso-42001.md
-│   │       ├── owasp-llm-top10.md
-│   │       ├── mitre-atlas.md
-│   │       ├── gdpr.md
-│   │       └── dora.md
-│   └── 04-project/                    # Code walkthrough
-│       └── architecture.md
 ├── data/                              # Machine-readable data
-│   ├── controls.csv                   # Controls catalog (source of truth)
+│   ├── controls.csv                   # Controls catalog (source of truth) — 79 controls
 │   ├── controls-schema.json           # JSON Schema for controls
 │   └── timeline.yaml                  # ← All EU AI Act dates (single source)
-├── project/                           # Deliverable 2: Working demo
-│   ├── use_case/                      # CV-screening scenario
-│   ├── risk_management/               # Art. 9 — Risk management system
-│   ├── data_governance/               # Art. 10 — Data quality & bias
-│   ├── documentation/                 # Art. 11 — Model cards & datasheets
-│   ├── logging/                       # Art. 12 — Structured event logging
-│   ├── transparency/                  # Art. 13 + 50 — Disclosures
-│   ├── human_oversight/               # Art. 14 — Override & intervention
-│   ├── robustness_security/           # Art. 15 — Adversarial defense
-│   ├── post_market_monitoring/        # Art. 72 — Drift & incidents
-│   ├── conformity_assessment/         # Art. 43, 47 — DoC & CE
-│   └── tests/                         # Compliance test suite
-├── scripts/                           # Build & render utilities
-├── site/                              # Astro site source
-└── .github/workflows/                 # CI: compliance tests on every PR
+└── docs/
+    ├── 01-overview/                   # Deliverable 2: Technical overview (2 of 7 chapters)
+    │   ├── scope-and-jurisdiction.md  # Art. 2 — Extraterritorial reach
+    │   └── risk-pyramid.md            # Art. 5–6 — Risk classification
+    ├── 02-architecture/
+    │   └── threat-model.md            # ← STRIDE + ATLAS + LINDDUN — the security justification
+    └── 03-controls/
+        └── methodology.md             # ← How the 79-control catalog was derived
 ```
+
+**Planned (tracked in [Issues](https://github.com/josephManzambi/eu-ai-act-blueprint/issues)):**
+
+- `docs/01-overview/` — remaining 5 chapters (actor roles, high-risk requirements, GPAI, timeline & penalties, AI Omnibus)
+- `docs/02-architecture/` — reference architecture (C4) + provider-vs-deployer matrix
+- `docs/03-controls/` — auto-rendered `catalog.md` + per-framework mapping deep-dives
+- `project/` — **Deliverable 3:** the working CV-screening demo (risk management, data governance, logging, human oversight, robustness, post-market monitoring, conformity assessment, tests)
+- `scripts/`, `site/`, `.github/workflows/` — render utilities, Astro site, and CI
 
 ---
 
@@ -257,7 +225,7 @@ The technical overview content in `docs/` and `site/` is additionally available 
 *From cloud to AI, I build the defensive layer between innovation and exploitation.*
 
 - 🌐 [manzambi.com](https://manzambi.com)
-- 📧 [Contact](https://manzambi.com/contact)
+- 📧 [Contact](https://manzambi.com/about#contact)
 - 🐙 [GitHub](https://github.com/josephManzambi)
 
 ---

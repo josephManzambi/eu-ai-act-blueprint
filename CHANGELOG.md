@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ---
 
+## [0.1.4] — 2026-06-22
+
+### Fixed
+- **README reconciled with what is actually in the repository.** The "Three deliverables" table, the "Run the compliance demo" quick-start block, and the project-structure tree all described an end-state repo — a runnable `project/` demo (`docker compose up`, `pytest project/tests/`), seven overview chapters, per-framework mapping files, `scripts/`, `site/`, and CI — none of which exist yet. The table now carries explicit status markers (✅ available / 🚧 in progress / 🔜 planned), the demo quick-start is labelled *planned — Phase 2* instead of presenting failing commands, and the structure tree shows the real tree today with a separate "Planned" list. `STATUS.md` was already accurate; the README front door now matches it.
+- **Stale contact link.** README author link pointed to `manzambi.com/contact` (removed from the site); updated to `manzambi.com/about#contact`.
+
+### Why
+The blueprint is about to be linked from a published article, which will send first-time visitors who clone and follow the README. Broken links and quick-start commands that fail on a fresh clone are the fastest way to lose a sharp reader's trust. This pass makes the front door honest without trimming the roadmap.
+
+---
+
 ## [0.1.3] — 2026-05-15
 
 ### Fixed

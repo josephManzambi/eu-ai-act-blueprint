@@ -1,6 +1,6 @@
 # Status
 
-**As of 15 May 2026** · v0.1.3
+**As of 22 June 2026** · v0.1.4
 
 ## What works today
 
