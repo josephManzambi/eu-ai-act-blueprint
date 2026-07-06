@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ---
 
+## [0.1.5] — 2026-07-06
+
+### Changed
+- **AI Omnibus recorded as formally adopted.** `data/timeline.yaml` moved the two high-risk milestones (Annex III, 2 Dec 2027; Annex I, 2 Aug 2028) and the watermarking / nudifier-ban milestone from `pending_adoption` to `upcoming`, and updated their `source`/`notes` to cite the formal adoption (European Parliament 16 June 2026; Council of the EU final green light 29 June 2026; awaiting publication in the Official Journal). The header update-protocol comment and the top-level `sources` list were updated to match. This reconciles the open-source source of truth with the live tracker on manzambi.com/tracker, which already reflected the adoption.
+
+### Added
+- **Code of Practice signatory deadline (22 July 2026)** added as a milestone — the Commission's cut-off for submitting signatory forms to appear on the initial-signatory list for the voluntary Code of Practice on Transparency of AI-Generated Content, before Art. 50 applies. Flagged as a voluntary Code, not a statutory deadline.
+- **GPAI enforcement clarified.** The 2 Aug 2026 transparency milestone now notes that Art. 50 obligations were confirmed *not* deferred by the Omnibus (only Art. 50(2) watermarking receives a grace period to 2 Dec 2026), and that from 2 Aug 2026 the Commission / AI Office may fine GPAI providers up to EUR 15 000 000 or 3% of worldwide turnover (Art. 101). A matching `penalties` tier for GPAI provider obligations (Art. 101) was added.
+
+### Why
+The credibility of a compliance tracker rests on its dates being verifiably fresh at the source. The committed timeline lagged the live site — it still marked the Omnibus `pending_adoption` / "expected July 2026" after the Council's 29 June final green light. `last_verified` bumped 2026-06-20 → 2026-07-06; `version` 0.1.4 → 0.1.5.
+
+---
+
 ## [0.1.4] — 2026-06-22
 
 ### Fixed
