@@ -14,17 +14,19 @@
 #     source:      Authoritative source for the date
 #     notes:       Optional caveats (Omnibus changes, formal adoption pending, etc.)
 #
-# When the AI Omnibus is formally adopted (expected July 2026), update:
-#   - The status field of affected milestones from "pending_adoption" to "upcoming"
-#   - The notes field to reference the formal text
-#   - The "last_verified" date at the bottom of this file
+# The AI Omnibus (AI Act simplification package) was formally adopted — European Parliament
+# 16 June 2026, Council of the EU final green light 29 June 2026 — and is awaiting publication in
+# the Official Journal. Affected milestones were moved from "pending_adoption" to "upcoming" in
+# v0.1.5. Update this file again when the OJ text is published, or when further implementing acts
+# amend these dates.
 
-version: "0.1.4"
-last_verified: "2026-06-20"
+version: "0.1.5"
+last_verified: "2026-07-06"
 sources:
   - "Regulation (EU) 2024/1689 (AI Act), OJ L 1689, 12 July 2024"
-  - "AI Omnibus political agreement, 7 May 2026 (formal adoption pending)"
+  - "AI Omnibus (AI Act simplification package) — formally adopted: European Parliament 16 June 2026, Council of the EU final green light 29 June 2026; awaiting publication in the Official Journal"
   - "Commission consultation on draft transparency guidelines, 8 May 2026"
+  - "Code of Practice on Transparency of AI-Generated Content — initial-signatory deadline 22 July 2026 (European Commission)"
 
 milestones:
   - date: "2024-08-01"
@@ -65,6 +67,22 @@ milestones:
     articles: ["Art. 51", "Art. 52", "Art. 53", "Art. 54", "Art. 55", "Art. 56", "Art. 64", "Art. 65", "Art. 66", "Art. 67", "Art. 68", "Art. 69", "Art. 70"]
     source: "Regulation 2024/1689, Art. 113(b)"
 
+  - date: "2026-07-22"
+    title: "Code of Practice signatory deadline (AI-generated content)"
+    summary: "Deadline to sign the Code of Practice to appear on the initial-signatory list before Art. 50 applies."
+    description: |
+      The European Commission invites providers and deployers to submit completed signatory forms
+      for the voluntary Code of Practice on Transparency of AI-Generated Content by this date.
+      Signatories who meet the deadline are included in the list of initial signatories published
+      before the Art. 50 transparency obligations take effect on 2 August 2026. The Code is a
+      voluntary compliance instrument, not a statutory obligation, but signing is the primary way
+      to demonstrate good-faith Art. 50 alignment at launch.
+    status: upcoming
+    category: transparency
+    articles: ["Art. 50"]
+    source: "European Commission — Code of Practice on Transparency of AI-Generated Content"
+    notes: "Voluntary Code of Practice, not a statutory deadline. Signing before this date secures inclusion in the published initial-signatory list."
+
   - date: "2026-08-02"
     title: "Transparency obligations (Art. 50)"
     summary: "Chatbot disclosure, emotion recognition notification, biometric categorization transparency."
@@ -78,6 +96,14 @@ milestones:
     category: transparency
     articles: ["Art. 50"]
     source: "Regulation 2024/1689, Art. 113"
+    notes: |
+      Confirmed NOT deferred by the AI Omnibus: the Art. 50 transparency obligations proceed on
+      2 August 2026 (only the machine-readable watermarking duty under Art. 50(2) receives a grace
+      period to 2 December 2026 for systems already on the market — see that milestone). From this
+      date the Commission / AI Office may also fine GPAI providers for breaches of the GPAI
+      obligations that took effect 2 August 2025: up to EUR 15 000 000 or 3% of total worldwide
+      annual turnover (Art. 101), with full investigatory powers (documentation requests, model
+      access, on-site inspections).
 
   - date: "2026-12-02"
     title: "Watermarking grace period + nudifier ban"
@@ -117,11 +143,11 @@ milestones:
       of justice. This includes the CV-screening use case demonstrated in this project (Annex III
       area 4). Conformity assessment, EU declaration of conformity, CE marking, and EU database
       registration become required before market placement.
-    status: pending_adoption
+    status: upcoming
     category: high_risk
     articles: ["Art. 6(2)", "Art. 8", "Art. 9", "Art. 10", "Art. 11", "Art. 12", "Art. 13", "Art. 14", "Art. 15", "Art. 16", "Art. 17", "Art. 43", "Art. 47", "Art. 48", "Art. 49"]
-    source: "AI Omnibus political agreement, 7 May 2026 (postponed from 2 Aug 2026 — 16 months)"
-    notes: "Original deadline was 2 August 2026. Postponed by AI Omnibus by 16 months. Formal adoption pending — expected July 2026. AI systems placed on the EU market before this date are not retroactively subject to high-risk requirements unless they undergo substantial modification."
+    source: "AI Omnibus (AI Act simplification package), formally adopted June 2026 (postponed from 2 Aug 2026 — 16 months)"
+    notes: "Original deadline was 2 August 2026. Postponed by the AI Omnibus by 16 months. Formally adopted by the European Parliament (16 June 2026) and Council (29 June 2026); awaiting publication in the Official Journal. AI systems placed on the EU market before this date are not retroactively subject to high-risk requirements unless they undergo substantial modification."
 
   - date: "2028-08-02"
     title: "High-risk AI in regulated products — Annex I"
@@ -132,15 +158,16 @@ milestones:
       in medical devices, toys, lifts, marine equipment, motor vehicles, civil aviation, rail
       systems, and radio equipment. AI subject to the Machinery Regulation (EU 2023/1230) is
       carved out entirely from the AI Act's direct application under the Omnibus.
-    status: pending_adoption
+    status: upcoming
     category: high_risk
     articles: ["Art. 6(1)", "Annex I"]
-    source: "AI Omnibus political agreement, 7 May 2026 (postponed from 2 Aug 2027 — 12 months)"
+    source: "AI Omnibus (AI Act simplification package), formally adopted June 2026 (postponed from 2 Aug 2027 — 12 months)"
     notes: |
-      Original deadline was 2 August 2027. Postponed by AI Omnibus by 12 months. The Omnibus also
+      Original deadline was 2 August 2027. Postponed by the AI Omnibus by 12 months. The Omnibus also
       narrows the "safety component" definition: AI components that merely assist users or optimise
       performance without creating health or safety risks will not automatically be high-risk.
-      Formal adoption pending.
+      Formally adopted by the European Parliament (16 June 2026) and Council (29 June 2026);
+      awaiting publication in the Official Journal.
 
   - date: "2030-12-31"
     title: "Large-scale IT systems (Annex X)"
@@ -178,6 +205,10 @@ penalties:
     max_eur: 15000000
     max_pct_turnover: 3.0
     article: "Art. 99(4)"
+  - tier: "GPAI provider obligations"
+    max_eur: 15000000
+    max_pct_turnover: 3.0
+    article: "Art. 101"
   - tier: "Incorrect information to authorities"
     max_eur: 7500000
     max_pct_turnover: 1.0
