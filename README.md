@@ -1,6 +1,6 @@
 # 🏗️ EU AI Act Blueprint
 
-**A working technical blueprint for EU AI Act compliance — for Providers and Deployers.**
+**A technical blueprint for EU AI Act compliance, for Providers and Deployers.**
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![EU AI Act](https://img.shields.io/badge/EU_AI_Act-2024%2F1689-003399.svg)](https://eur-lex.europa.eu/eli/reg/2024/1689)
@@ -13,7 +13,7 @@
 
 Most EU AI Act resources tell you *what* the law says. This project shows you *what to build*.
 
-It is a **reference implementation** of the technical controls required to comply with the EU AI Act (Regulation 2024/1689), demonstrated through a concrete high-risk AI use case: a **CV-screening system** for employment (Annex III, area 4).
+It is a **technical blueprint** for the controls the EU AI Act (Regulation (EU) 2024/1689) requires, worked through one concrete high-risk use case: a **CV-screening system** for employment (Annex III, area 4). Today it contains a 79-control catalog, a threat model and two overview chapters. A runnable reference implementation is planned (Deliverable 3) and is not in this repository yet.
 
 The project covers both **Provider** obligations (the company building the AI) and **Deployer** obligations (the company using it) — because in practice, most enterprises are both.
 
@@ -31,7 +31,7 @@ The project covers both **Provider** obligations (the company building the AI) a
 
 ## Why this exists
 
-The EU AI Act's enforcement is rolling out in phases. Transparency obligations take effect on **2 August 2026**, and — following the AI Omnibus political agreement of May 2026 — standalone high-risk AI system requirements (Annex III) apply from **2 December 2027**. Companies building or deploying AI in Europe — or selling to European customers — need to translate 180+ pages of regulation into engineering decisions.
+The EU AI Act applies in phases. The Article 50 transparency obligations have applied since **2 August 2026**. The AI Omnibus, adopted as Regulation (EU) 2026/1744 and in force since 27 July 2026, moved the requirements for standalone high-risk AI systems (Annex III) to **2 December 2027**. Companies that build or deploy AI in Europe, or sell to European customers, need to turn 180+ pages of regulation into engineering decisions.
 
 This project is that translation.
 
@@ -150,20 +150,20 @@ Each control is cross-referenced with:
 
 ## Implementation timeline
 
-The EU AI Act's obligations apply in phases. The **AI Omnibus** political agreement of 7 May 2026 significantly extended the deadlines for high-risk AI systems:
+The EU AI Act's obligations apply in phases. The **AI Omnibus** (political agreement 7 May 2026, adopted as Regulation (EU) 2026/1744, in force since 27 July 2026) extended the deadlines for high-risk AI systems:
 
 | Date | What applies | Status |
 |------|-------------|--------|
 | 2 Feb 2025 | Prohibited practices (Art. 5) + AI literacy (Art. 4) | ✅ In force |
 | 2 Aug 2025 | GPAI obligations (Art. 51–56) + Governance (Art. 64–70) | ✅ In force |
-| 2 Aug 2026 | Transparency obligations (Art. 50) — chatbot disclosure, emotion recognition, biometric categorization. GPAI enforcement powers. | ⏳ Upcoming |
+| 2 Aug 2026 | Transparency obligations (Art. 50): chatbot disclosure, emotion recognition, biometric categorization. GPAI enforcement powers. | ✅ Applies |
 | 2 Dec 2026 | Watermarking/content labeling for AI systems already on market (3-month grace period). New prohibition on "nudifier" applications (non-consensual intimate imagery / CSAM). | ⏳ Upcoming |
 | 2 Aug 2027 | Regulatory sandboxes — deadline for national competent authorities to establish sandboxes. | 🔜 Upcoming |
-| **2 Dec 2027** | **Standalone high-risk AI systems (Annex III) — full Art. 8–15 requirements, conformity assessment, enforcement.** This is the deadline for our CV-screening demo (area 4: Employment). | 🔜 Pending adoption |
-| 2 Aug 2028 | High-risk AI as products/safety components under EU product safety rules (Annex I) — medical devices, toys, vehicles, etc. Machinery Regulation AI carved out entirely. | 🔜 Pending adoption |
+| **2 Dec 2027** | **Standalone high-risk AI systems (Annex III): full Art. 8–15 requirements, conformity assessment, enforcement.** This is the deadline for our CV-screening demo (area 4: Employment). | 🔜 Upcoming |
+| 2 Aug 2028 | High-risk AI as products/safety components under EU product safety rules (Annex I): medical devices, toys, vehicles, etc. Machinery Regulation AI carved out entirely. | 🔜 Upcoming |
 | 31 Dec 2030 | Large-scale IT systems (Annex X) | 🔜 Upcoming |
 
-> **Note:** The AI Omnibus still requires formal adoption by the European Parliament and Council (expected by July 2026). Other key Omnibus changes: industrial AI under the Machinery Regulation is carved out from the AI Act; the "safety component" definition is narrowed; SME simplifications are extended to mid-caps (≤750 employees / €150M revenue); and special category data may be used for bias detection/mitigation where strictly necessary. This project tracks updates as they are published in the Official Journal.
+> **Note:** The AI Omnibus was published in the Official Journal on 24 July 2026 as Regulation (EU) 2026/1744 and entered into force on 27 July 2026. Other key Omnibus changes, as described at the political agreement (check the adopted text for final wording): industrial AI under the Machinery Regulation is carved out from the AI Act; the "safety component" definition is narrowed; SME simplifications are extended to mid-caps (≤750 employees / €150M revenue); and special category data may be used for bias detection/mitigation where strictly necessary. This project tracks updates as they are published in the Official Journal.
 
 ---
 
