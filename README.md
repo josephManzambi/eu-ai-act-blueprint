@@ -157,13 +157,13 @@ The EU AI Act's obligations apply in phases. The **AI Omnibus** (political agree
 | 2 Feb 2025 | Prohibited practices (Art. 5) + AI literacy (Art. 4) | ✅ In force |
 | 2 Aug 2025 | GPAI obligations (Art. 51–56) + Governance (Art. 64–70) | ✅ In force |
 | 2 Aug 2026 | Transparency obligations (Art. 50): chatbot disclosure, emotion recognition, biometric categorization. GPAI enforcement powers. | ✅ Applies |
-| 2 Dec 2026 | Watermarking/content labeling for AI systems already on market (3-month grace period). New prohibition on "nudifier" applications (non-consensual intimate imagery / CSAM). | ⏳ Upcoming |
-| 2 Aug 2027 | Regulatory sandboxes — deadline for national competent authorities to establish sandboxes. | 🔜 Upcoming |
+| 2 Dec 2026 | Art. 50(2) machine-readable marking for generative AI systems placed on the market before 2 Aug 2026 (transition under Art. 111(4)). New prohibitions on "nudifier" applications (non-consensual intimate imagery / CSAM). | ⏳ Upcoming |
+| 2 Aug 2027 | Regulatory sandboxes: each Member State must have at least one operational (Art. 57(1), moved from 2 Aug 2026 by the Omnibus). | 🔜 Upcoming |
 | **2 Dec 2027** | **Standalone high-risk AI systems (Annex III): full Art. 8–15 requirements, conformity assessment, enforcement.** This is the deadline for our CV-screening demo (area 4: Employment). | 🔜 Upcoming |
-| 2 Aug 2028 | High-risk AI as products/safety components under EU product safety rules (Annex I): medical devices, toys, vehicles, etc. Machinery Regulation AI carved out entirely. | 🔜 Upcoming |
+| 2 Aug 2028 | High-risk AI as products/safety components under the EU product laws in Annex I Section A: medical devices, toys, lifts, radio equipment, etc. Machinery moved to Section B, with AI requirements to come via delegated acts under the Machinery Regulation. | 🔜 Upcoming |
 | 31 Dec 2030 | Large-scale IT systems (Annex X) | 🔜 Upcoming |
 
-> **Note:** The AI Omnibus was published in the Official Journal on 24 July 2026 as Regulation (EU) 2026/1744 and entered into force on 27 July 2026. Other key Omnibus changes, as described at the political agreement (check the adopted text for final wording): industrial AI under the Machinery Regulation is carved out from the AI Act; the "safety component" definition is narrowed; SME simplifications are extended to mid-caps (≤750 employees / €150M revenue); and special category data may be used for bias detection/mitigation where strictly necessary. This project tracks updates as they are published in the Official Journal.
+> **Note:** The AI Omnibus is Regulation (EU) 2026/1744. The European Parliament adopted its position on 16 June 2026 and the Council adopted the act on 29 June 2026; it was signed on 8 July 2026 (the date in its title), published in the Official Journal on 24 July 2026 and entered into force on 27 July 2026. Other key Omnibus changes, as described at the political agreement (check the adopted text for final wording): machinery moves to Annex I Section B, so the AI Act's high-risk requirements reach it through the Machinery Regulation; the "safety component" definition is narrowed; SME simplifications are extended to mid-caps (≤750 employees / €150M revenue); and special category data may be used for bias detection/mitigation where strictly necessary. This project tracks updates as they are published in the Official Journal.
 
 ---
 
