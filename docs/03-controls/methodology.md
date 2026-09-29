@@ -25,7 +25,7 @@ This document defines the rules that make those questions answerable. The rules 
 
 The catalog covers:
 
-- **EU AI Act (Regulation 2024/1689)** obligations as adopted on 21 May 2024, as amended by the **AI Omnibus** political agreement of 7 May 2026 (pending formal adoption).
+- **EU AI Act (Regulation 2024/1689)** obligations as adopted on 21 May 2024, as amended by the **AI Omnibus** political agreement of 7 May 2026. The Omnibus was since adopted as Regulation (EU) 2026/1744 (in force 27 July 2026); the catalog has not yet been re-versioned against the adopted text (see §7).
 - Obligations for two AI Act actor roles: **Provider** (Art. 16) and **Deployer** (Art. 26).
 - Obligations across all four risk tiers: **Prohibited** (Art. 5), **High-Risk** (Art. 6 + Annex III + Annex I), **Limited Risk / Transparency** (Art. 50), and **GPAI** (Art. 51–55).
 - Cross-framework mappings to: **NIST AI RMF 1.0**, **ISO/IEC 42001:2023**, **OWASP Top 10 for LLM Applications (2025)**, **MITRE ATLAS**, **GDPR (2016/679)**, **DORA (2022/2554)**.
@@ -247,7 +247,7 @@ The catalog is versioned at the same cadence as the project (semver). When the E
 | 0.1.2 | 15 May 2026 | Methodology documentation | Authored this methodology document. Documented scope decisions, granularity rule, domain rationale, per-domain control derivation. No catalog content changed. |
 | 0.1.3 | 15 May 2026 | Phase 1.5 defensibility hardening + OWASP correction | Corrected OWASP LLM Top 10 mappings to the 2025 edition (12 controls updated; previous values were a mix of 2023 names with self-contradictory IDs). Collapsed maturity_level from 5-level CMMI scale to 3 levels (Documented / Implemented / Tested). Added `status` column tracking implementation progress within this project. Added threat model justification (`docs/02-architecture/threat-model.md`). Added timeline as single source of truth (`data/timeline.yaml`). |
 
-When the AI Omnibus is formally adopted (expected July 2026), the catalog will be re-versioned to 0.2.0 to reflect the formal text rather than the political agreement.
+The AI Omnibus was adopted as Regulation (EU) 2026/1744 (OJ 24 July 2026, in force 27 July 2026). Re-versioning the catalog to 0.2.0 against the adopted text, rather than the political agreement, is still pending.
 
 ---
 

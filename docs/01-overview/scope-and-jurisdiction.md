@@ -125,7 +125,7 @@ The EU AI Act does not operate in isolation. Several other EU regulations intera
 | **GDPR (2016/679)** | AI systems processing personal data must comply with both. DPIA required for high-risk AI. Automated decision-making safeguards (Art. 22) overlap with human oversight. | AISEC-GV-007, AISEC-GV-008 |
 | **DORA (2022/2554)** | Financial sector AI systems are subject to both AI Act and DORA ICT risk management, incident reporting, and third-party risk requirements. | AISEC-GV-004, AISEC-GV-005, AISEC-GV-006 |
 | **Product safety (2023/988)** | AI systems that are safety components of products must meet both AI Act and General Product Safety Regulation requirements. | — |
-| **Machinery Regulation (2023/1230)** | Under the AI Omnibus (May 2026), AI subject to the Machinery Regulation is **carved out entirely** from the AI Act's direct application. AI-related safety measures for machinery will be handled via delegated acts under the Machinery Regulation itself. | — |
+| **Machinery Regulation (2023/1230)** | Under the AI Omnibus (Regulation (EU) 2026/1744), the Machinery Regulation moves to Annex I Section B, so the AI Act's high-risk requirements no longer apply to machinery directly (Art. 2(2)). AI-specific requirements will come via delegated acts under the Machinery Regulation, applying by 2 August 2028. | — |
 | **Medical Devices (2017/745)** | AI-based medical devices are high-risk under both the AI Act and MDR. Existing MDR conformity assessment can be leveraged. | — |
 | **NIS2 Directive (2022/2555)** | Cybersecurity requirements under Art. 15 align with NIS2 obligations for essential and important entities. | AISEC-CS-001 |
 

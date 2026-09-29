@@ -53,9 +53,9 @@ These AI practices are **banned outright** as of 2 February 2025. Building, depl
 | Emotion inference in workplace or education (except medical/safety) | Art. 5(1)(f) | AISEC-PH-007 |
 | Biometric categorization to infer sensitive attributes (race, political opinions, religion, sexual orientation) | Art. 5(1)(g) | — |
 | Real-time remote biometric identification in public spaces for law enforcement (narrow exceptions) | Art. 5(1)(h) | AISEC-PH-004 |
-| Non-consensual intimate imagery ("nudifiers") and CSAM generation *(AI Omnibus — effective 2 Dec 2026)* | Art. 5 (Omnibus) | AISEC-PH-008 |
+| Non-consensual intimate imagery ("nudifiers") and CSAM generation *(AI Omnibus, applies from 2 Dec 2026)* | Art. 5(1)(ba)-(bb) (Omnibus) | AISEC-PH-008 |
 
-> **AI Omnibus update (May 2026):** The political agreement of 7 May 2026 added an explicit ban on "nudifier" applications — AI systems that generate or manipulate non-consensual intimate imagery of real persons, or that create child sexual abuse material (CSAM). This prohibition takes effect on **2 December 2026**. Providers and Deployers may not place on the EU market AI systems designed for these purposes, or that lack reasonable safeguards against such use.
+> **AI Omnibus update:** The political agreement of 7 May 2026, adopted as Regulation (EU) 2026/1744 (in force 27 July 2026), added an explicit ban on "nudifier" applications: AI systems that generate or manipulate non-consensual intimate imagery of real persons, or that create child sexual abuse material (CSAM). This prohibition takes effect on **2 December 2026**. Providers and Deployers may not place on the EU market AI systems designed for these purposes, or that lack reasonable safeguards against such use.
 
 ### What this means for security architects
 
@@ -87,9 +87,9 @@ This covers AI embedded in:
 - Rail systems (Directive 2016/797)
 - Marine equipment (Directive 2014/90)
 
-**Timeline:** Under the AI Omnibus political agreement (7 May 2026), these obligations apply from **2 August 2028** — a 12-month postponement from the previously planned August 2027 date. The Omnibus also narrows the "safety component" definition: if an AI component merely assists users or optimises performance without creating health or safety risks, it will not automatically be subject to high-risk obligations. Additionally, AI subject to the Machinery Regulation is **carved out entirely** from the AI Act's direct application.
+**Timeline:** Under the AI Omnibus (Regulation (EU) 2026/1744, in force 27 July 2026), these obligations apply from **2 August 2028**, a 12-month postponement from the previously planned August 2027 date. The Omnibus also narrows the "safety component" definition: if an AI component merely assists users or optimises performance without creating health or safety risks, it will not automatically be subject to high-risk obligations. Additionally, the Omnibus moves the Machinery Regulation to Annex I Section B, so the AI Act's high-risk requirements no longer apply to machinery directly; they are to come through delegated acts under the Machinery Regulation, applying by 2 August 2028.
 
-> **Formal adoption pending:** The Omnibus still requires formal adoption by the European Parliament and Council (expected July 2026). Until published in the Official Journal, plan against both the original and amended timelines.
+> **Adopted:** The Omnibus was published in the Official Journal on 24 July 2026 as Regulation (EU) 2026/1744 and entered into force on 27 July 2026. The dates above are the adopted dates.
 
 ### Path B: Standalone high-risk systems (Art. 6(2) + Annex III)
 
@@ -106,7 +106,7 @@ The AI system is listed in **Annex III** as a standalone high-risk system. These
 | 7. Migration, asylum, border control | Polygraphs, document authenticity assessment, application assessment, irregular migration risk | **2 Dec 2027** |
 | 8. Administration of justice | Researching and interpreting facts and law, applying law to facts | **2 Dec 2027** |
 
-> **Timeline change:** The original AI Act set these dates at 2 August 2026. The AI Omnibus political agreement (7 May 2026) introduced a 16-month postponement to 2 December 2027, giving Providers and Deployers additional time to comply while harmonised standards and guidance are finalised. AI systems placed on the EU market *before* 2 December 2027 will not be subject to high-risk requirements unless they undergo a substantial modification after that date.
+> **Timeline change:** The original AI Act set these dates at 2 August 2026. The AI Omnibus (political agreement 7 May 2026, adopted as Regulation (EU) 2026/1744) introduced a 16-month postponement to 2 December 2027, giving Providers and Deployers additional time to comply while harmonised standards and guidance are finalised. AI systems placed on the EU market *before* 2 December 2027 will not be subject to high-risk requirements unless their design changes significantly after that date (Art. 111(2)). Systems intended for use by public authorities must comply by 2 August 2030 regardless.
 
 > **Our demo project** targets **area 4: Employment** — specifically a CV-screening and candidate ranking system. This is one of the clearest high-risk use cases and is the type of AI system most commonly deployed by mid-to-large enterprises.
 
@@ -178,7 +178,7 @@ AI systems that don't meet the high-risk threshold but **interact directly with 
 | Disclose deep fakes | Systems generating manipulated image/audio/video | AISEC-TR-004 |
 | Inform persons exposed to emotion recognition or biometric categorization | Emotion/biometric systems (not prohibited ones) | AISEC-TR-005 |
 
-These obligations apply from **2 August 2026**. However, under the AI Omnibus agreement, generative AI systems already placed on the market or put into service before that date have a 3-month grace period for **watermarking/content labeling** requirements — compliance due by **2 December 2026**. The Commission opened consultation on draft transparency guidelines and a Code of Practice on 8 May 2026.
+These obligations apply from **2 August 2026**. However, under the AI Omnibus (Art. 111(4)), providers of generative AI systems placed on the market before that date have until **2 December 2026** to meet the Art. 50(2) **machine-readable marking** duty. Deployer labelling of deepfakes (Art. 50(4)) has no such transition. The Commission opened consultation on draft transparency guidelines on 8 May 2026 and published the final guidelines on 20 July 2026; the Code of Practice on Transparency of AI-Generated Content was published in June 2026.
 
 **Note:** High-risk systems must also meet these transparency requirements *in addition to* the Article 8–15 requirements. The obligations are cumulative, not alternative.
 

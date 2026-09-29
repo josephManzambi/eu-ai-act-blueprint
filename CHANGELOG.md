@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ---
 
+## [0.1.6] - 2026-09-29
+
+### Fixed
+- **Re-verified every dated entry in `data/timeline.yaml` against primary sources** (the OJ texts of Regulation (EU) 2024/1689 and Regulation (EU) 2026/1744, Commission pages). `last_verified` 2026-07-06 to 2026-09-29; `version` 0.1.5 to 0.1.6.
+- **Council date settled.** 29 June 2026 is correct: footnote 4 of Regulation (EU) 2026/1744 records the European Parliament position of 16 June 2026 and the Council decision of 29 June 2026. 8 July 2026 is the signature date (the "of 8 July 2026" in the title, "Done at Strasbourg, 8 July 2026"), not the Council's adoption. The file now states both.
+- **Code of Practice signatory deadline** moved from 22 July to 27 July 2026 (18:00 CEST), per the Commission's Q&A on signing the code. Status set to `in_force` because the date has passed; the Code itself stays voluntary.
+- **2 Dec 2026 milestone:** the transition for Art. 50(2) marking is four months (2 Aug to 2 Dec 2026), not three, and covers only providers of systems placed on the market before 2 Aug 2026 (Art. 111(4)). Source now cites the adopted Regulation instead of the political agreement; "pending formal adoption" note removed.
+- **Regulatory sandboxes (2 Aug 2027):** source corrected to Art. 57(1) as amended by the Omnibus (the original deadline was 2 Aug 2026).
+- **2 Aug 2025 milestone:** the Commission's GPAI fines (Art. 101) were excluded from that date and apply from 2 Aug 2026; the description no longer implies otherwise.
+- **2 Aug 2026 milestone** status `upcoming` to `in_force`; notes on the 20 July 2026 guidelines added.
+- **Annex III and Annex I milestones:** sources now cite Art. 113 as amended; "awaiting publication" notes replaced with the OJ publication (24 July 2026) and entry into force (27 July 2026). Annex I description now separates Section A products from Section B (vehicles, aviation, marine, rail, and now machinery), which the high-risk requirements reach through sectoral law (Art. 2(2)). The legacy-system note now uses the Art. 111(2) wording and the 2 Aug 2030 public-authority deadline.
+- README timeline table, `docs/01-overview/risk-pyramid.md`, `docs/01-overview/scope-and-jurisdiction.md` and `docs/03-controls/methodology.md` updated to match. The catalog itself has not been re-versioned against the adopted text yet; that is still pending.
+
 ## [0.1.5] — 2026-07-06
 
 ### Changed
