@@ -18,11 +18,20 @@
 # 16 June 2026, Council decision 29 June 2026 (both per footnote 4 of the OJ text), signed 8 July
 # 2026 (the date in its title), published in the Official Journal 24 July 2026, in force 27 July
 # 2026 (its final article: third day after publication). In v0.1.6 every dated entry was re-checked
-# against the OJ texts and Commission pages; see CHANGELOG.md. Update this file when further
-# amending or implementing acts change these dates.
+# against the OJ texts and Commission pages; see CHANGELOG.md.
+#
+# The dates rest on the law, not on a check date: `legal_basis` names the texts they come from, and
+# they hold until the Act is amended again. Update this file (and `legal_basis`) when a further
+# amending act changes them. Guidelines, standards and implementing acts that do not move a date
+# are tracked on the Commission's official timeline, not here.
 
-version: "0.1.6"
-last_verified: "2026-09-29"
+version: "0.1.7"
+legal_basis:
+  text: "Regulation (EU) 2024/1689 as amended by Regulation (EU) 2026/1744"
+  oj_date: "2026-07-24"
+  consolidated_version: "https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng"
+  last_checked_against_oj: "2026-09-29"
+official_timeline: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act"
 sources:
   - "Regulation (EU) 2024/1689 (AI Act), OJ L 1689, 12 July 2024"
   - "Regulation (EU) 2026/1744 (Digital Omnibus on AI) of 8 July 2026, OJ L 2026/1744, 24 July 2026, in force 27 July 2026 (EP position 16 June 2026, Council decision 29 June 2026)"
@@ -204,7 +213,7 @@ milestones:
     articles: ["Art. 111(1)", "Annex X"]
     source: "Regulation 2024/1689, Art. 111(1)"
 
-# Quick-reference: countdown anchors for the live tracker page
+# Quick-reference: countdown anchors for the timeline page (manzambi.com/tracker)
 # (computed client-side from today's date — see /tracker page on the Astro site)
 countdown_anchors:
   - milestone_date: "2026-08-02"
