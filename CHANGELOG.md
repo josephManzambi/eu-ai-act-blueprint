@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 
 ---
 
+## [0.1.7] - 2026-10-19
+
+### Changed
+- **Timeline dates rest on the law, not on a check date.** `data/timeline.yaml` replaces `last_verified` with `legal_basis` (Regulation (EU) 2024/1689 as amended by Regulation (EU) 2026/1744, OJ 24 July 2026, with the consolidated version and the date it was last checked against the OJ, 29 September 2026) and adds `official_timeline` (the Commission's AI Act Service Desk). The dates hold until the Act is next amended; guidelines, standards and implementing acts that don't move a date are left to the official timeline.
+- **`WHAT_THIS_IS_NOT.md`:** the "updated in the last 60 days" staleness rule is replaced by the legal-basis rule above. The paragraph on the Act's evolution now names the Omnibus as Regulation (EU) 2026/1744 and notes the first harmonised standard cited in the OJ (EN 18286, October 2026).
+- **README:** manzambi.com/tracker is described as a timeline, not a "live tracker", matching the site.
+
+### Why
+The site's tracker no longer promises a "last verified" date, and this repository should not promise one either: a date that has to be refreshed every 60 days goes stale on its own, while the legal basis stays true until the next amendment.
+
+---
+
 ## [0.1.6] - 2026-09-29
 
 ### Fixed

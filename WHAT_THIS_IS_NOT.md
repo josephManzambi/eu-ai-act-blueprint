@@ -46,9 +46,9 @@ This project follows the regulation's scope. It does not ask "should we build th
 
 ## This is not a fixed reference
 
-The EU AI Act is being actively shaped. The AI Omnibus (May 2026) significantly changed enforcement timelines. The AI Office is publishing implementing acts. Harmonized standards from CEN-CENELEC JTC 21 are in draft. National competent authorities are issuing guidance. Court decisions interpreting the Act will begin appearing.
+The EU AI Act is being actively shaped. The AI Omnibus (Regulation (EU) 2026/1744, in force 27 July 2026) significantly changed enforcement timelines. The AI Office is publishing implementing acts. The first harmonised standard (EN 18286, quality management) was cited in the Official Journal in October 2026; the others from CEN-CENELEC JTC 21 are still in draft. National competent authorities are issuing guidance. Court decisions interpreting the Act will begin appearing.
 
-**Treat the version of this project you are reading as a snapshot in time.** Check the `last_verified` date in `data/timeline.yaml` and the version tag in the repository. If neither has been updated in the last 60 days, parts of this project may be stale.
+**Treat the version of this project you are reading as a snapshot in time.** The dates in `data/timeline.yaml` follow the texts named in its `legal_basis` and hold until the Act is amended again. Everything else (guidelines, standards, implementing acts, and the controls' interpretation of the Act) reflects the repository's version tag; check the Commission's [official timeline](https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act) for what has been adopted since.
 
 ---
 

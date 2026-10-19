@@ -22,7 +22,7 @@ The project covers both **Provider** obligations (the company building the AI) a
 | # | Deliverable | What it does | Status |
 |---|-------------|-------------|--------|
 | 1 | **Controls Mapping** — [`data/controls.csv`](data/controls.csv) | 79 technical controls, each mapped to EU AI Act articles, NIST AI RMF, ISO/IEC 42001, OWASP LLM Top 10, MITRE ATLAS, GDPR, and DORA. Schema-validated, machine-readable. | ✅ **Available now** |
-| 2 | **Technical Overview** — [live tracker](https://manzambi.com/tracker) + [`docs/01-overview/`](docs/01-overview/) | Plain-language walkthrough of the EU AI Act from a security architect's perspective: scope, risk classification, actor roles, requirements, timeline, penalties. Plus a STRIDE + ATLAS + LINDDUN [threat model](docs/02-architecture/threat-model.md). | 🚧 **In progress** — 2 of 7 chapters + threat model published |
+| 2 | **Technical Overview** — [timeline](https://manzambi.com/tracker) + [`docs/01-overview/`](docs/01-overview/) | Plain-language walkthrough of the EU AI Act from a security architect's perspective: scope, risk classification, actor roles, requirements, timeline, penalties. Plus a STRIDE + ATLAS + LINDDUN [threat model](docs/02-architecture/threat-model.md). | 🚧 **In progress** — 2 of 7 chapters + threat model published |
 | 3 | **Compliance Demo** — `project/` *(not yet in repo)* | A working CV-screening API implementing every Article 8–15 control: risk management, data governance, bias detection, logging, human oversight, adversarial testing, post-market monitoring. Runs with `docker compose up`. | 🔜 **Planned (Phase 2)** — [tracked in issues](https://github.com/josephManzambi/eu-ai-act-blueprint/issues) |
 
 > **What works today vs. what's planned:** the controls catalog, threat model, and overview chapters are usable now; the runnable demo is the next milestone. See **[STATUS.md](STATUS.md)** for the full picture.
@@ -62,7 +62,7 @@ The runnable CV-screening demo — the FastAPI service, the compliance test suit
 
 ### Read the technical overview
 
-Visit the [live EU AI Act Tracker](https://manzambi.com/tracker) for the enforcement timeline, or browse the technical chapters locally:
+See the [EU AI Act timeline](https://manzambi.com/tracker) for when each part applies (the Commission's [official timeline](https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act) covers guidelines and standards as they land), or browse the technical chapters locally:
 
 ```bash
 cd docs/
